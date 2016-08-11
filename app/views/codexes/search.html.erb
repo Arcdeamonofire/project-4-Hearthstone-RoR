@@ -1,0 +1,22 @@
+<div class="search">
+  <a href="/search/Druid"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/f/fa/Malfurion_Stormrage%28621%29.png/250px-Malfurion_Stormrage%28621%29.png?version=8c3aebe4f7d7e3c2999898c68d53c94d" alt="Druid" />Druid</a>
+  <a href="/search/Hunter"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/a/a0/Rexxar%28484%29.png/250px-Rexxar%28484%29.png?version=467229f863083b172161e0333a42ad10" alt="Hunter" />Hunter</a>
+  <a href="/search/Mage"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/3/3c/Jaina_Proudmoore%28320%29.png/250px-Jaina_Proudmoore%28320%29.png?version=dadb94427682aaea9210ba1a05f04949" alt="Mage" />Mage</a>
+  <a href="/search/Paladin"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/4/4d/Uther_Lightbringer%28257%29.png/250px-Uther_Lightbringer%28257%29.png?version=c1c5f69896d6f364b8e8dc09330c5054" alt="Paladin" />Paladin</a>
+  <a href="/search/Priest"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/8/80/Anduin_Wrynn%28110%29.png/250px-Anduin_Wrynn%28110%29.png?version=5d5982c9226812b987cb302257d36767" alt="Priest" />Priest</a>
+  <a href="/search/Rogue"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/a/a4/Valeera_Sanguinar%282%29.png/250px-Valeera_Sanguinar%282%29.png?version=8c6ee9fa93779ba6ae1fe74c3717e2537" alt="Rogue" />Rogue</a>
+  <a href="/search/Shaman"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/4/4b/Thrall%28319%29.png/250px-Thrall%28319%29.png?version=87995eda213d9abedcc5cdc327a327ad" alt="Shaman" />Shaman</a>
+  <a href="/search/Warlock"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/0/0a/Gul%27dan%28618%29.png/250px-Gul%27dan%28618%29.png?version=35ae56403de4957954adf9dcde911a07" alt="Warlock" />Warlock</a>
+  <a href="/search/Warrior"><img src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/c/c5/Garrosh_Hellscream%28635%29.png/250px-Garrosh_Hellscream%28635%29.png?version=f41421bcdc8ffeb73d227f6942508b9d" alt="Warrior" />Warrior</a>
+</div>
+
+<%if @cards %>
+  <% @cards.each do |card| %>
+    <% next if !card["img"] || !card["cost"]%>
+  <div>
+    <a href="/cards/<%=card["name"]%>"><img src="<%=card["img"]%>" alt="<%=card["name"]%>" /></a>
+    <p><%=card["name"]%></p>
+    <p>Class: <%=card["playerClass"]%></p>
+  </div>
+  <%end%>
+<%end%>

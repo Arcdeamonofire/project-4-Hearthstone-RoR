@@ -9,6 +9,21 @@
   </head>
 
   <body>
+    <h1>Hearthstone Codex</h1>
+    <nav>
+      <% if session[:user] %>
+        <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
+      <% else %>
+        <a href="/sign_up">Sign up</a>
+        <a href="/sign_in">Sign in</a>
+
+      <% end %>
+      <a href="/search">Search</a>
+      <!-- <a href="/recipes">Recipes</a> -->
+    </nav>
+      <br>
+      <em><%= flash[:notice] %></em>
+
     <%= yield %>
   </body>
 </html>
