@@ -1,7 +1,24 @@
 
-<%=@card[0]%>
-<img src="<%=@card[0]["img"]%>" alt="<%=@card[0]["name"]%>" />
-<p><%=@card[0]["name"]%></p>
-<p>Class: <%=@card[0]["playerClass"]%></p>
+<!-- <%=@card[0]%> -->
+<div>
+  <img src="<%=@card[0]["img"]%>" alt="<%=@card[0]["name"]%>" title="<%=@card[0]["flavor"]%>"/>
+  <%=@card[0]["img"]%>
+</div>
+<div>
+<h2><%=@card[0]["name"]%></h2>
+<p>Type:<%=@card[0]["type"]%></p>
+<p>Cost:<%=@card[0]["cost"]%></p>
+<%if @card[0]["attack"]%>
+  <p>Attack:<%=@card[0]["attack"]%></p>
+<%end%>
+<%if @card[0]["heath"] %>
+  <p>Health:<%=@card[0]["text"]%></p>
+<%end%>
+<%if @card[0]["durability"]%>
+  <p>Durability:<%=@card[0]["durability"]%></p>
+<%end%>
+<!-- <p> <%=@card[0]["text"]%></p> -->
+<!-- <p>Class: <%=@card[0]["playerClass"]%></p> -->
+</div>
 
-<h3><a href="/search/<%=@card[0]["playerClass"]%>">Back to Search</a></h3>
+<h3><a href="/search/<%=@card[0]["playerClass"]%>">Back to <%=@card[0]["playerClass"]%> Cards</a></h3>

@@ -22,8 +22,11 @@ ActiveRecord::Schema.define(version: 20160811005503) do
     t.string   "cost"
     t.integer  "attack"
     t.integer  "health"
+    t.integer  "durability"
     t.string   "description"
+    t.string   "flavor"
     t.string   "img"
+    t.string   "class"
     t.boolean  "in_deck",     default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false

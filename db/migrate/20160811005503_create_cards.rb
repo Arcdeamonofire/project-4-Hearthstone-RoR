@@ -7,8 +7,11 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.string :cost
       t.integer :attack
       t.integer :health
+      t.integer :durability
       t.string :description
+      t.string :flavor
       t.string :img
+      t.string :class
 
       t.boolean :in_deck, default:false
       t.timestamps
