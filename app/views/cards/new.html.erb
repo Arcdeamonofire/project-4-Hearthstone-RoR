@@ -1,0 +1,46 @@
+<!-- <%=@card[0]%> -->
+<div class="row">
+
+
+  <div class="one-half column">
+    <img src="<%=@data["img"]%>" alt="<%=@data["name"]%>" title="<%=@data["flavor"]%>"/>
+  </div>
+  <div class="one-half column">
+    <h2><%=@data["name"]%></h2>
+    <p>Type:<%=@data["type"]%></p>
+    <%if @data["cost"]%>
+      <p>Cost:<%=@data["cost"]%></p>
+    <%end%>
+    <%if @data["attack"]%>
+      <p>Attack:<%=@data["attack"]%></p>
+    <%end%>
+    <%if @data["heath"] %>
+      <p>Health:<%=@data["text"]%></p>
+    <%end%>
+    <%if @data["durability"]%>
+      <p>Durability:<%=@data["durability"]%></p>
+    <%end%>
+
+    <%= form_for @card do |f| %>
+    <%= f.hidden_field :name, :value => @data["name"] %>
+    <%= f.hidden_field :card_type, :value => @data["type"]%>
+    <%= f.hidden_field :cost, :value => @data["cost"] %>
+    <%= f.hidden_field :attack, :value => @data["attack"] %>
+    <%= f.hidden_field :health, :value => @data["health"] %>
+    <%= f.hidden_field :durability, :value => @data["durability"] %>
+    <%= f.hidden_field :description, :value => @data["description"] %>
+    <%= f.hidden_field :flavor, :value => @data["flavor"] %>
+    <%= f.hidden_field :img, :value => @data["img"] %>
+    <%= f.hidden_field :player_class, :value => @data["player_class"] %>
+    <%= f.hidden_field :in_deck, :value => true %>
+    <p>Which deck would you like to add this card to?
+      <br>
+    <%= f.select :deck_id, @decks.map{|deck| [ deck["name"], deck["id"] ]} %></p>
+    <br>
+    <%= f.submit "Submit" %>
+    <% end %>
+  <!-- <p> <%=@data["text"]%></p> -->
+  <!-- <p>Class: <%=@data["playerClass"]%></p> -->
+  </div>
+</div>
+<h3 id="return"><a href="/search/<%=@data["playerClass"]%>">Back to <%=@data["playerClass"]%> Cards</a></h3>
