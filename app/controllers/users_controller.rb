@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       session[:roxanne]="Red Lights"
     end
     flash[:notice] = message
-    redirect_to action: :sign_in
+    redirect_to decks_path
   end
 
   def sign_out

@@ -11,6 +11,7 @@
   <body class="container">
     <h1>Hearthstone Codex</h1>
     <nav>
+      <a href="/">Home</a>
       <% if session[:user] %>
         <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
       <% else %>

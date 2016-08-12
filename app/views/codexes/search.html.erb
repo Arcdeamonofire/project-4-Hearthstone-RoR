@@ -8,10 +8,17 @@
   <div class="one column"><a class="thumb" href="/search/Shaman"><img class="thumb" src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/4/4b/Thrall%28319%29.png/250px-Thrall%28319%29.png?version=87995eda213d9abedcc5cdc327a327ad" alt="Shaman" />Shaman</a></div>
   <div class="one column"><a class="thumb" href="/search/Warlock"><img class="thumb" src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/0/0a/Gul%27dan%28618%29.png/250px-Gul%27dan%28618%29.png?version=35ae56403de4957954adf9dcde911a07" alt="Warlock" />Warlock</a></div>
   <div class="one column"><a class="thumb" href="/search/Warrior"><img class="thumb" src="https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/c/c5/Garrosh_Hellscream%28635%29.png/250px-Garrosh_Hellscream%28635%29.png?version=f41421bcdc8ffeb73d227f6942508b9d" alt="Warrior" />Warrior</a></div>
+  <!-- <div class="one column"><a class="thumb" href="/search/None">None</a></div> -->
+
+  </div>
 </div>
 
 <div class="row">
-  <%if @cards %>
+  <%if @none %>
+    <% @cards.each do |card| %>
+    <%=card[1][0]["name"]%>
+    <%end%>
+  <%elsif @cards %>
     <% @cards.each do |card| %>
       <% next if !card["img"] || !card["cost"]%>
       <div class="one-third column">

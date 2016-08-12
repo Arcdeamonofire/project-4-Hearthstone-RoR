@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :decks
   resources :cards
+  resources :users
 
   # User routes
   get '/sign_in', to: 'users#sign_in'

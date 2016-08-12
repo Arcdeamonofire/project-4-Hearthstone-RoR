@@ -1,0 +1,12 @@
+<%=@deck["name"]%>
+<br>
+<%if @cards.length === 0 %>
+  <a href="/search/<%=@deck["character_class"]%>">Add some <%=@deck["character_class"]%> cards to your deck!</a>
+
+<br>
+<% else %>
+<%=@cards.each do |card|%>
+  dance
+<%end%>
+
+<%end%>

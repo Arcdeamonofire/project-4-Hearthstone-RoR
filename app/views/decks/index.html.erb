@@ -1,0 +1,10 @@
+<h2><%=@user["username"]%>'s Decks</h2>
+<%= link_to "New Deck", new_deck_path(:user_id => @user["id"]) %>
+<br>
+<%@decks.each do |deck| %>
+<div class="">
+  <%=link_to deck["name"], cards_path(:deck_id => deck["id"])%>
+  <br>
+  <%=deck["character_class"]%>
+</div>
+<%end%>
