@@ -26,8 +26,29 @@ class CardsController < ApplicationController
   end
 
   def create
-    card = Card.create(card_params)
-    puts card
+    deck = Deck.find(params["card"]["deck_id"])
+    puts ("is class equal to Neutral?")
+    puts (params["card"]["player_class"] === "")
+    puts ("is class equal to deck class?")
+    puts (params["card"]["player_class"] === deck["character_class"])
+    if params["card"]["player_class"] === ""
+      card = Card.create(card_params)
+      redirect_to "/cards?deck_id="+params["card"]["deck_id"]
+    elsif params["card"]["player_class"] === deck["character_class"]
+      card = Card.create(card_params)
+      redirect_to "/cards?deck_id="+params["card"]["deck_id"]
+    else
+      message = "You can only add cards that are "+ deck["character_class"] +" or Neutral to your deck!"
+      flash[:notice] = message
+      redirect_to :back
+    end
+  end
+
+  def destroy
+    card = Card.find(params[:id])
+    card.destroy
+
+    redirect_to :back
   end
 
   private

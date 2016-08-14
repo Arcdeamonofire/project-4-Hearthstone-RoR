@@ -14,16 +14,16 @@
       <a href="/">Home</a>
       <% if session[:user] %>
         <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
+        <%= link_to "Decks", decks_path %>
       <% else %>
         <a href="/sign_up">Sign up</a>
         <a href="/sign_in">Sign in</a>
 
       <% end %>
       <a href="/search">Search</a>
-      <!-- <a href="/recipes">Recipes</a> -->
     </nav>
       <br>
-      <em><%= flash[:notice] %></em>
+      <em class="error"><%= flash[:notice] %></em>
 
     <%= yield %>
   </body>

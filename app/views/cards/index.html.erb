@@ -5,8 +5,11 @@
 
 <br>
 <% else %>
-<%=@cards.each do |card|%>
-  dance
+<%@cards.each do |card|%>
+  <div class="one-third column">
+    <a href="/cards/<%=card["name"]%>"><img src="<%=card["img"]%>" alt="<%=card["name"]%>" title="<%=card["name"]%>" class="thumb"/></a>
+    <%= link_to "Delete", card_path(card), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 <%end%>
 
 <%end%>
