@@ -1,4 +1,8 @@
-<%=@deck["name"]%>
+<h2><%=@deck["name"]%></h2>
+<p>A <%=@deck["character_class"]%> Deck</p>
+<%= link_to "Rename Deck", edit_deck_path(@deck) %>
+<br>
+<%= link_to "Delete Deck", deck_path(@deck), method: :delete, data: { confirm: 'Are you sure?' } %>
 <br>
 <%if @cards.length === 0 %>
   <a href="/search/<%=@deck["character_class"]%>">Add some <%=@deck["character_class"]%> cards to your deck!</a>
