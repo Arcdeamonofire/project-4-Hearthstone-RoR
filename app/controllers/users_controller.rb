@@ -26,8 +26,12 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if !@user
       message = "This user doesn't exist!"
+      flash[:notice] = message
+      redirect_to :back
     elsif !BCrypt::Password.new(@user.password_digest).is_password?(params[:password])
       message = "Your password's wrong!"
+      flash[:notice] = message
+      redirect_to :back
     else
       message = "You're signed in, #{@user.username}!"
       cookies[:username] = {
@@ -36,9 +40,11 @@ class UsersController < ApplicationController
       }
       session[:user] = @user
       session[:roxanne]="Red Lights"
+      flash[:notice] = message
+      redirect_to decks_path
     end
-    flash[:notice] = message
-    redirect_to decks_path
+
+
   end
 
   def sign_out
