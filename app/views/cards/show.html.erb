@@ -22,7 +22,9 @@
     <%end%>
   <!-- <p> <%=@card[0]["text"]%></p> -->
   <!-- <p>Class: <%=@card[0]["playerClass"]%></p> -->
-    <%= link_to "Add Card to Deck", new_card_path(:card_name => @card[0]["name"]) %>
+    <% if @isUser %>
+      <%= link_to "Add Card to Deck", new_card_path(:card_name => @card[0]["name"]) %>
+    <%end%>
   </div>
 </div>
 <h3 id="return"><a href="/search/<%=@card[0]["playerClass"]%>">Back to <%=@card[0]["playerClass"]%> Cards</a></h3>

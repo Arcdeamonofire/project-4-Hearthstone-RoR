@@ -23,6 +23,9 @@ class CardsController < ApplicationController
       "Accept" => "application/json"
     }
     @card = response.body
+    if session[:user]
+      @isUser = true
+    end
   end
 
   def create
