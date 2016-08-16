@@ -17,3 +17,64 @@
 .error {
   color:red;
 }
+
+html {
+  background-color: #F0E7CA;
+}
+
+body{
+  min-width: 550px;
+}
+
+#body {
+  padding-top: 8em;
+  text-align: center;
+}
+
+#navBar {
+  min-width: 450px;
+  height:1em;
+  text-align: center;
+  position: fixed;
+  background: #B4AF9F;
+  width:100%;
+  top:0;
+  padding-bottom: 4em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  margin: 0;
+  left: 0px;
+}
+
+.home-ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.home-li {
+  display: inline-block;
+  padding: 0 2em;
+  text-decoration: none;
+  color:black;
+}
+
+a{
+  color:black;
+}
+
+
+.home-li:hover {
+  cursor: pointer;
+  color:black;
+  border-top: 2px solid #318ba2;
+  padding-top: 1em;
+}
+
+#logo{
+  display:block;
+  height:100%;
+  width:100%;
+  left: 0px;
+}

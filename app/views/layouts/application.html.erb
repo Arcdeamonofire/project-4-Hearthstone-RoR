@@ -9,22 +9,27 @@
   </head>
 
   <body class="container">
-    <h1>Hearthstone Codex</h1>
     <nav>
-      <a href="/">Home</a>
-      <% if session[:user] %>
-        <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
-        <%= link_to "Decks", decks_path %>
-      <% else %>
-        <a href="/sign_up">Sign up</a>
-        <a href="/sign_in">Sign in</a>
+      <div class="row " id="navBar">
+        <ul class="home-ul">
+          <li class="home-li three columns" ><img src="../Img/hearthstone_logo.png" alt="" id="logo"/></li>
+          <a href="/"><li class="home-li two columns">Home</li></a>
+          <% if session[:user] %>
+            <a href="/sign_out"><li class="home-li three columns"><%= session[:user]["username"] %>: sign out</li></a>
+            <%= link_to "Decks", decks_path , class: "home-li two columns"%>
+          <% else %>
+            <a href="/sign_up"><li class="home-li two columns">Sign up</li></a>
+            <a href="/sign_in"><li class="home-li two columns">Sign in</li></a>
 
-      <% end %>
-      <a href="/search">Search</a>
+          <% end %>
+          <a href="/search"><li class="home-li two columns">Search</li></a>
+        </ul>
+      </div>
     </nav>
       <br>
       <em class="error"><%= flash[:notice] %></em>
-
-    <%= yield %>
+    <div id="body">
+      <%= yield %>
+    </div>
   </body>
 </html>
