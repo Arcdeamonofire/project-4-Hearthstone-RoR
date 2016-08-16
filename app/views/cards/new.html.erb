@@ -39,7 +39,7 @@
     <%= f.hidden_field :in_deck, :value => true %>
     <p>Which deck would you like to add this card to?
       <br>
-      <% if !@decks %>
+      <% if !@decks[0] %>
         <p class="error">Create a deck first!</p>
       <% else %>
         <%= f.select :deck_id, @decks.map{|deck| [ deck["name"], deck["id"] ]} %></p>
